@@ -27,7 +27,7 @@ spring:
       connection-timeout: 30000  # Timeout in milliseconds before a connection attempt is abandoned
   jpa:
     hibernate:
-      ddl-auto: update  # Use `create`, `create-drop`, or `validate` as per your environment
+      ddl-auto: create  # Use `create`, `create-drop`, or `validate` as per your environment
     show-sql: true  # Shows SQL statements in the logs
     properties:
       hibernate:
