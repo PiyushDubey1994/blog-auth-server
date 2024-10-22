@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: BLOG-AUTH-SERVER
+
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: dataemission@gmail.com
+#    password: P@dubey@1993
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/myblogs  # Database URL (adjust port, host, and DB name if necessary)
+    username: root  # Your MySQL username
+    password: root  # Your MySQL password
+    driver-class-name: com.mysql.cj.jdbc.Driver  # MySQL JDBC driver
+    hikari:
+      maximum-pool-size: 10  # Maximum number of connections in the connection pool
+      minimum-idle: 5  # Minimum number of idle connections
+      idle-timeout: 30000  # Idle timeout in milliseconds
+      max-lifetime: 1800000  # Maximum lifetime of a connection in the pool
+      connection-timeout: 30000  # Timeout in milliseconds before a connection attempt is abandoned
+  jpa:
+    hibernate:
+      ddl-auto: create  # Use `create`, `create-drop`, or `validate` as per your environment
+    show-sql: true  # Shows SQL statements in the logs
+    properties:
+      hibernate:
+        format_sql: true  # Formats SQL for better readability in logs
+        dialect: org.hibernate.dialect.MySQLDialect  # MySQL dialect for Hibernate
+  # Optional, to ensure correct timezone
+  time:
+    zone: UTC  # Or any other timezone you prefer
+
+# Server configuration
+server:
+  port: 8082  # Your application will run on this port
+
+# Eureka (if using service discovery)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka/  # Point to the Eureka server
+
+# Optional: Logging for detailed debug output (if needed)
+logging:
+  level:
+    org.springframework: DEBUG
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+google-auth:
+  issuer: Blog Site
+  label: PiyushDubey@gmail.com
+
+
+
