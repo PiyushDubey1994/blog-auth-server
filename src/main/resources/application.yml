@@ -15,9 +15,9 @@ spring:
 #            enable: true
 
   datasource:
-    url: jdbc:mysql://localhost:3306/myblogs  # Database URL (adjust port, host, and DB name if necessary)
-    username: root  # Your MySQL username
-    password: root  # Your MySQL password
+    url: jdbc:mysql://34.68.25.55:3306/blogsite  # Database URL (adjust port, host, and DB name if necessary)
+    username: pdubey  # Your MySQL username
+    password: P@dubey#1993  # Your MySQL password
     driver-class-name: com.mysql.cj.jdbc.Driver  # MySQL JDBC driver
     hikari:
       maximum-pool-size: 10  # Maximum number of connections in the connection pool
