@@ -43,6 +43,9 @@ server:
 
 # Eureka (if using service discovery)
 eureka:
+  instance:
+    preferIpAddress: true
+    hostname: 34.45.202.104
   client:
     serviceUrl:
       defaultZone: http://34.45.202.104:81/eureka/  # Point to the Eureka server
