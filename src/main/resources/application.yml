@@ -45,7 +45,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8081/eureka/  # Point to the Eureka server
+      defaultZone: http://34.45.202.104:81/eureka/  # Point to the Eureka server
 
 # Optional: Logging for detailed debug output (if needed)
 logging:

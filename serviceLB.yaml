@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-auth-server-deployment-loadbalancer
+  labels:
+    app: blog-auth-server-app-loadbalancer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-auth-server-app-loadbalancer
+  template:
+    metadata:
+      labels:
+        app: blog-auth-server-app-loadbalancer
+    spec:
+      containers:
+        - name: blog-auth-server-app-loadbalancer
+          image: piyushdubey1994/blog-auth-server:tagversion
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-auth-server-service-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: blog-auth-server-app-loadbalancer
+  ports:
+    - protocol: TCP
+      port: 82
+      targetPort: 8082
